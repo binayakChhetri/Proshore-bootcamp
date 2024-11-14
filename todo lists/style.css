@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Defining variables  */
+
+:root {
+  --todo-completed-color: #d3d3d3;
+  --todo-pending-color: #646464;
+  --button-color: #32be81;
+  --title-color: #2c835d;
+}
+
+body {
+  height: 100vh;
+  background-color: #f0efe9;
+  font-family: "Aileron", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 40rem;
+  width: 30rem;
+  background-color: white;
+  padding: 2rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 3rem 0rem;
+}
+
+/* Styling the title */
+.title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--title-color);
+}
+
+/* Styling the the todo lists section */
+.todo-lists {
+  height: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+li {
+  color: var(--todo-pending-color);
+  list-style-type: none;
+  margin-bottom: 1.2rem;
+}
+
+li > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling the checkbox */
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1.2rem;
+}
+
+/* Styling the add more todo section */
+.add-more-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.add-more-todo input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #d3d3d3;
+  border: solid 2px var(--button-color);
+}
+
+.add-more-todo input:focus {
+  outline: none;
+}
+
+.add-more-todo button {
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--button-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.1rem;
+}
