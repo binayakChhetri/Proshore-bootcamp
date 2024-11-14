@@ -54,9 +54,7 @@ li {
   color: var(--todo-pending-color);
   list-style-type: none;
   margin-bottom: 1.2rem;
-}
 
-li > div {
   display: flex;
   justify-content: space-between;
 }
