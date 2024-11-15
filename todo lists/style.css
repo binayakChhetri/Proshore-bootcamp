@@ -9,8 +9,9 @@
 :root {
   --todo-completed-color: #d3d3d3;
   --todo-pending-color: #646464;
-  --button-color: #32be81;
+  --add-button-color: #32be81;
   --title-color: #2c835d;
+  --del-button-color: #ff3d00;
 }
 
 body {
@@ -35,12 +36,23 @@ body {
   border-radius: 3rem 0rem;
 }
 
-/* Styling the title */
-.title {
+/* Styling the title and sorting */
+.title-sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-sorting > .title {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.5rem;
   color: var(--title-color);
+}
+
+.title-sorting > select {
+  padding: 0.4rem;
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
 }
 
 /* Styling the the todo lists section */
@@ -50,19 +62,25 @@ body {
   font-weight: 600;
 }
 
-li {
+.todo-lists > li {
   color: var(--todo-pending-color);
   list-style-type: none;
   margin-bottom: 1.2rem;
 
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-lists > li > label {
+  flex: 1;
+  overflow-x: hidden;
 }
 
 /* Styling the checkbox */
 input[type="checkbox"] {
   cursor: pointer;
   width: 1.2rem;
+  margin-left: 1rem;
 }
 
 /* Styling the add more todo section */
@@ -78,7 +96,7 @@ input[type="checkbox"] {
   width: 100%;
   padding: 0.7rem 1rem;
   border: 1px solid #d3d3d3;
-  border: solid 2px var(--button-color);
+  border: solid 2px #32be81;
 }
 
 .add-more-todo input:focus {
@@ -88,10 +106,21 @@ input[type="checkbox"] {
 .add-more-todo button {
   text-transform: uppercase;
   padding: 0.8rem 1.5rem;
-  background-color: var(--button-color);
+  background-color: var(--add-button-color);
   color: white;
   font-weight: 600;
   cursor: pointer;
   border: none;
   letter-spacing: 0.1rem;
+}
+
+.del-todo {
+  cursor: pointer;
+  background-color: var(--del-button-color);
+  color: white;
+  padding: 0rem 0.2rem;
+  font-weight: 700;
+  border: none;
+  margin: 0.5rem;
+  margin-right: 1rem;
 }
