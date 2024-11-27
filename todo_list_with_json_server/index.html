@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-sorting">
+        <div class="title">Your Todo's</div>
+        <select name="sort-by" id="sort-by">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+      </div>
+      <ul class="todo-lists"></ul>
+      <div class="add-more-todo">
+        <button type="button" class="add-btn">Add</button>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button id="close-modal">x</button>
+        <input class="input-todo" type="text" placeholder="Your todo" />
+        <button id="add-todo" class="add-todo">Add</button>
+      </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
