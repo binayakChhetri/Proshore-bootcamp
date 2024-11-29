@@ -1,0 +1,84 @@
+/* General styles */
+
+/* Form container */
+form {
+  background-color: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+}
+
+/* Form title */
+form h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Label styles */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555555;
+  font-size: 14px;
+}
+
+/* Input field styles */
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+/* Input field focus state */
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Button styles */
+form button {
+  margin-top: 0.1rem;
+  width: 100%;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form {
+    padding: 15px 20px;
+  }
+
+  form h1 {
+    font-size: 20px;
+  }
+
+  form button {
+    font-size: 14px;
+  }
+}
