@@ -1,2 +1,4 @@
 todo_list_with_json_server/.env
 React/formik-tutorial/node_modules
+.vscode
+form-validation/node_modules
