@@ -1,9 +1,11 @@
 import React from "react";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas";
-import Error from "../UI/Error";
 import { Title } from "../UI/Title";
 import { Input } from "../UI/Input";
+import { SelectInput } from "../UI/SelectInput";
+import { Button } from "../UI/Button";
+import { AboutMe } from "../UI/AboutMe";
 
 const SignupForm = () => {
   const { values, errors, handleSubmit, handleChange, resetForm } = useFormik({
@@ -75,33 +77,31 @@ const SignupForm = () => {
       </div>
 
       <div className="input-section">
-        <label htmlFor="country">Country</label>
-        <select
-          id="countryName"
+        <SelectInput
           name="countryName"
-          value={values.countryName}
-          onChange={handleChange}
+          values={values}
+          handleChange={handleChange}
         >
-          <option value="us">US</option>
-          <option value="nep">Nepal</option>
-          <option value="in">India</option>
-          <option value="ch">China</option>
-          <option value="other">Other</option>
-        </select>
+          Country
+        </SelectInput>
       </div>
 
       <div className="terms-conditions">
-        <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
-        <label htmlFor="agreeTerms" style={{ color: "gray-700" }}>
+        <Input
+          inputType="checkbox"
+          name="agreeTerms"
+          values={values}
+          handleChange={handleChange}
+        >
           I agree the terms and conditions
-        </label>
+        </Input>
       </div>
 
       <div className="login-signup-container">
-        <button type="submit">Sign Up</button>
-        <button type="button" onClick={() => resetForm()}>
+        <Button btnType="submit">Sign Up</Button>
+        <Button btnType="button" resetForm={resetForm}>
           Reset
-        </button>
+        </Button>
       </div>
     </form>
   );

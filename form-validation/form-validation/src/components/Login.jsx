@@ -43,13 +43,10 @@ function Login() {
           Password
         </Input>
       </div>
-
       <div className="input-section checkbox-section">
-        <input type="checkbox" id="checkbox" required />
-        <label style={{ display: "inline" }} htmlFor="checkbox">
-          {" "}
+        <Input inputType="checkbox" name="rememberPwd">
           Remember password ?
-        </label>
+        </Input>
       </div>
 
       <Link className="navigate" to="/sign-up">

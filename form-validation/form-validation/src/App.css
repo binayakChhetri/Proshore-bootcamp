@@ -5,15 +5,16 @@
 }
 
 :root {
-  --bg-color: #e5f0f6;
+  /* More black less white */
+  --bg-color: #000000;
   --form-bg-color: #ffffff;
-  --label-color: #555555;
-  --input-color: #333333;
-  --input-border-color: #cccccc;
-  --input-border-focus-color: #007bff;
+  --label-color: #000000;
+  --input-color: #000000;
+  --input-border-color: #000000;
+  --input-border-focus-color: #0000004d;
   --error-color: #fc8181;
-  --btn-color: #007bff;
-  --title-color: #1f2937;
+  --btn-color: #000000;
+  --title-color: #000000;
 }
 
 section {
@@ -31,8 +32,8 @@ form {
   border-radius: 0.5rem;
   width: 100%;
   background-color: var(--form-bg-color);
-  max-width: 28rem;
-  width: 500px;
+  max-width: 29rem;
+
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 3rem 2.5rem;
@@ -51,6 +52,10 @@ form label {
 .input-section {
   margin-bottom: 0.53rem;
   position: relative;
+}
+
+.checkbox-section {
+  display: flex;
 }
 
 /* Input field styles */
@@ -120,15 +125,16 @@ form button:hover {
 }
 
 select {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.6rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   border-radius: 0.375rem;
   border-width: 1px;
-  border-color: #d1d5db;
   width: 100%;
   outline: none;
+  cursor: pointer;
+  border: 1px solid var(--input-border-color);
 }
 
 input[type="checkbox"] {
@@ -145,21 +151,37 @@ input[type="checkbox"] {
   margin: 1rem 0rem;
 }
 
+input[type="checkbox"] {
+  margin-top: 0.09rem;
+}
+
 .navigate {
   margin-top: 0.7rem;
   margin-bottom: 0.1rem;
   display: block;
-  color: #007bff;
+  color: #292929;
   text-decoration: none;
   font-size: 0.8rem;
   position: relative;
 }
 
+/* Page not found */
+.page-not-found {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 /* Input field focus state */
-form input:focus {
+form input:focus,
+select:focus {
   border-color: var(--input-border-focus-color);
   outline: none;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 2px var(--input-border-focus-color);
 }
 
 /* Responsive Design */
@@ -196,4 +218,10 @@ form input:focus {
   select {
     width: 80%;
   }
+}
+
+/* CK Editor */
+.ck {
+  width: 100%;
+  height: 150px;
 }
