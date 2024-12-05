@@ -1,10 +1,12 @@
 import { Link } from "react-router";
-import "./login.css";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
+import Error from "../UI/Error";
+import { Input } from "../UI/Input";
+import { Title } from "../UI/Title";
 
 function Login() {
-  const formik = useFormik({
+  const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -15,46 +17,47 @@ function Login() {
     },
     validationSchema: basicSchema,
   });
-  console.log(formik.errors);
+
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <h1>Login form</h1>
-      <label htmlFor="email" id="">
-        Email
-      </label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-        className={formik.errors.email ? "input-error" : ""}
-      />
-      {formik.errors.email && <p className="error">{formik.errors.email}</p>}
+    <form onSubmit={handleSubmit}>
+      <Title>Login</Title>
+      <div className="input-section">
+        <Input
+          inputType="email"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+          name="email"
+        >
+          Email
+        </Input>
+      </div>
+      <div className="input-section">
+        <Input
+          inputType="password"
+          name="password"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        >
+          Password
+        </Input>
+      </div>
 
-      <label htmlFor="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        onChange={formik.handleChange}
-        value={formik.values.password}
-        required
-      />
-      {formik.errors.password && (
-        <p className="error">{formik.errors.password}</p>
-      )}
+      <div className="input-section checkbox-section">
+        <input type="checkbox" id="checkbox" required />
+        <label style={{ display: "inline" }} htmlFor="checkbox">
+          {" "}
+          Remember password ?
+        </label>
+      </div>
 
-      <input type="checkbox" id="checkbox" required />
-      <label style={{ display: "inline" }} htmlFor="checkbox">
-        {" "}
-        Do you agree our terms and condtions?
-      </label>
-
-      <Link className="navigate" to="/signUp">
-        Click to Sign Up
+      <Link className="navigate" to="/sign-up">
+        Click to signup
       </Link>
-      <button type="submit">Login</button>
+      <div className="input-section">
+        <button type="submit">Login</button>
+      </div>
     </form>
   );
 }

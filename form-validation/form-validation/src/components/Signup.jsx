@@ -1,16 +1,18 @@
 import React from "react";
-import "./signup.css";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas";
+import Error from "../UI/Error";
+import { Title } from "../UI/Title";
+import { Input } from "../UI/Input";
 
 const SignupForm = () => {
-  const formik = useFormik({
+  const { values, errors, handleSubmit, handleChange, resetForm } = useFormik({
     initialValues: {
       username: "",
       email: "",
-      countryName: "",
       password: "",
       confirmPassword: "",
+      countryName: "",
     },
     onSubmit: (values, actions) => {
       console.log(values);
@@ -19,99 +21,89 @@ const SignupForm = () => {
     validationSchema: signupSchema,
   });
 
-  console.log(formik.errors);
+  console.log(errors);
+
   return (
-    <div className="container">
-      <form onSubmit={formik.handleSubmit}>
-        <h2 className="title">Sign Up</h2>
+    <form onSubmit={handleSubmit}>
+      <Title>Sign Up</Title>
 
-        <div style={{ marginBottom: "0.5rem" }}>
-          <label htmlFor="firstName">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            onChange={formik.handleChange}
-            value={formik.values.username}
-            required
-          />
-          {formik.errors.username && (
-            <p className="error">{formik.errors.username}</p>
-          )}
-        </div>
+      <div className="input-section">
+        <Input
+          inputType="text"
+          name="username"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        >
+          Username
+        </Input>
+      </div>
+      <div className="input-section">
+        <Input
+          inputType="email"
+          name="email"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        >
+          Email
+        </Input>
+      </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="lastName">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-          />
-          {formik.errors.email && (
-            <p className="error">{formik.errors.email}</p>
-          )}
-        </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            required
-          />
-          {formik.errors.password && (
-            <p className="error">{formik.errors.password}</p>
-          )}
-        </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            value={formik.values.confirmPassword}
-            onChange={formik.handleChange}
-            id="confirmPassword"
-            type="password"
-            placeholder="Confirm Password"
-          />
-          {formik.errors.confirmPassword && (
-            <p className="error">{formik.errors.confirmPassword}</p>
-          )}
-        </div>
+      <div className="input-section" id="password">
+        <Input
+          inputType="password"
+          name="password"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        >
+          Password
+        </Input>
+      </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="country">Country</label>
-          <select
-            id="countryName"
-            name="countryName"
-            value={formik.values.countryName}
-            onChange={formik.handleChange}
-          >
-            <option value="us">US</option>
-            <option value="nep">Nepal</option>
-            <option value="in">India</option>
-            <option value="ch">China</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+      <div className="input-section">
+        <Input
+          inputType="password"
+          name="confirmPassword"
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        >
+          Confirm password
+        </Input>
+      </div>
 
-        <div style={{ marginBottom: "1.5rem", display: "flex" }}>
-          <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
-          <label htmlFor="agreeTerms" style={{ color: "gray-700" }}>
-            I agree to the terms and conditions
-          </label>
-        </div>
+      <div className="input-section">
+        <label htmlFor="country">Country</label>
+        <select
+          id="countryName"
+          name="countryName"
+          value={values.countryName}
+          onChange={handleChange}
+        >
+          <option value="us">US</option>
+          <option value="nep">Nepal</option>
+          <option value="in">India</option>
+          <option value="ch">China</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
 
-        <div className="flex justify-between">
-          <button type="submit">Sign Up</button>
-          <button type="button" onClick={() => formik.resetForm()}>
-            Reset
-          </button>
-        </div>
-      </form>
-    </div>
+      <div className="terms-conditions">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+        <label htmlFor="agreeTerms" style={{ color: "gray-700" }}>
+          I agree the terms and conditions
+        </label>
+      </div>
+
+      <div className="login-signup-container">
+        <button type="submit">Sign Up</button>
+        <button type="button" onClick={() => resetForm()}>
+          Reset
+        </button>
+      </div>
+    </form>
   );
 };
 

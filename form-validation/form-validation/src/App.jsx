@@ -1,10 +1,18 @@
 import Login from "./components/Login";
 import "./App.css";
+import { Routes, BrowserRouter, Route } from "react-router";
+import Signup from "./components/Signup.jsx";
 
 function App() {
   return (
     <section>
-      <Login />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Login />} />
+          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>{" "}
     </section>
   );
 }
