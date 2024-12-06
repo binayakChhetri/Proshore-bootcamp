@@ -1,9 +1,10 @@
-import Login from "./components/Login";
+import Login from "./features/Login.jsx";
 import "./App.css";
 import { Routes, BrowserRouter, Route } from "react-router";
-import Signup from "./components/Signup.jsx";
+import Signup from "./features/Signup.jsx";
 import Error from "./UI/Error.jsx";
-import { AboutMe } from "./UI/AboutMe.jsx";
+import { Dashboard } from "./UI/Dashboard.jsx";
+import ProtectedRoute from "./utlis/ProtectedRoute.jsx";
 
 function App() {
   return (
@@ -13,7 +14,15 @@ function App() {
           <Route index element={<Login />} />
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/about-me" element={<AboutMe />} />
+
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
 
           <Route path="*" element={<Error errorMessage="Page not found" />} />
         </Routes>

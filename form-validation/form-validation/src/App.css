@@ -222,6 +222,25 @@ select:focus {
 
 /* CK Editor */
 .ck {
-  width: 100%;
   height: 150px;
+}
+
+.ck.ck-reset.ck-editor.ck-rounded-corners {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ck-evaluation-badge {
+  display: none;
+}
+
+/* Styling dashboard */
+.dashboard {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
