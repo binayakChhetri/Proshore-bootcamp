@@ -12,8 +12,8 @@ export const Dashboard = () => {
 
   const logout = () => {
     dispatch(setIsAuthenticated(false));
-    dispatch(restore());
     localStorage.clear();
+    dispatch(restore());
   };
   console.log(username);
   return (

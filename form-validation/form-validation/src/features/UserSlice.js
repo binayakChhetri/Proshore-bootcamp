@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Getting data from local storage
 const initialState = {
-  username: "",
-  isAuthenticated: false,
+  username: localStorage.getItem("username") || "",
+  isAuthenticated: localStorage.getItem("isAuthenticated") || false,
 };
 
 const userSlice = createSlice({

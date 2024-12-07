@@ -39,7 +39,7 @@ function Login() {
       } else {
         toast.error("Invalid email or password");
       }
-      -resetForm();
+      resetForm();
     },
     validationSchema: basicSchema,
   });
