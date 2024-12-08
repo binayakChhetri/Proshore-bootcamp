@@ -29,7 +29,8 @@ function Login() {
           dispatch(setIsAuthenticated(true));
 
           // Save the username and isAuthenticated in local storage
-          localStorage.setItem("username", user.username);
+          localStorage.setItem("userId", user.id);
+          localStorage.setItem("useraname", user.username);
           localStorage.setItem("isAuthenticated", true);
         }
       });

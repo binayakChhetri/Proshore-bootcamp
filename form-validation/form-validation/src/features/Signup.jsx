@@ -38,6 +38,7 @@ const SignupForm = () => {
           username: values.username,
           email: values.email,
           password: values.password,
+          description: "",
         };
         apiPost(postData);
         naviagte("/login");
@@ -131,7 +132,14 @@ const SignupForm = () => {
           </Input>
         </div>
 
-        <div className="login-signup-container">
+        <div
+          id="login-signup-container"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <Button btnType="submit">Sign Up</Button>
           <Button btnType="button" onClick={resetForm}>
             Reset

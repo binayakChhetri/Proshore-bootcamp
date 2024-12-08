@@ -12,15 +12,18 @@ export const Dashboard = () => {
 
   const logout = () => {
     dispatch(setIsAuthenticated(false));
-    localStorage.clear();
     dispatch(restore());
+    localStorage.clear();
   };
   console.log(username);
   return (
     <div className="dashboard">
       <Title>{`Welcome to the dashboard ${username}`}</Title>
       <AboutMe />
-      <Button onClick={logout}>Logout</Button>
+
+      <Button btnType="button" onClick={logout}>
+        Logout
+      </Button>
     </div>
   );
 };

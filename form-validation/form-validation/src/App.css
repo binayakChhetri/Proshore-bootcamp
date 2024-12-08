@@ -7,14 +7,16 @@
 :root {
   /* More black less white */
   --bg-color: #000000;
+  --title-color: #000000;
   --form-bg-color: #ffffff;
   --label-color: #000000;
   --input-color: #000000;
   --input-border-color: #000000;
   --input-border-focus-color: #0000004d;
   --error-color: #fc8181;
-  --btn-color: #000000;
-  --title-color: #000000;
+  --btn-bg-color: #000000;
+  --btn-color: #ffffff;
+  --btn-hover: #0056b3;
 }
 
 section {
@@ -106,8 +108,8 @@ form input[type="text"] {
 button {
   margin-top: 0.1rem;
   width: 100%;
-  background-color: var(--btn-color);
-  color: #ffffff;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
   padding: 10px 15px;
   font-size: 16px;
   font-weight: bold;
@@ -120,8 +122,8 @@ button {
   transition: background-color 0.2s;
 }
 
-form button:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: var(--btn-hover);
 }
 
 select {
@@ -143,7 +145,7 @@ input[type="checkbox"] {
   border-color: #d1d5db;
   width: 1rem;
   height: 1rem;
-  color: var(--btn-color);
+  color: var(--btn-bg-color);
 }
 
 .terms-conditions {
@@ -199,7 +201,6 @@ select:focus {
     width: 80%;
   }
 
-  .login-signup-container,
   .input-section {
     text-align: center;
   }

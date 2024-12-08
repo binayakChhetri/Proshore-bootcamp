@@ -1,58 +1,46 @@
 {
   "userInfo": [
     {
-      "id": 1,
-      "username": "abc",
-      "email": "abc@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": 2,
-      "username": "def",
-      "email": "def@gmail.com",
-      "password": "6789012"
-    },
-    {
-      "id": 3,
-      "username": "binayak",
-      "email": "bin@gmail.com",
-      "password": "123456"
-    },
-    {
       "id": "a6f2",
       "username": "23061011",
       "email": "jkl@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": "Hello, My name is binayak chhetri."
     },
     {
       "id": "aa7e",
       "username": "manager",
       "email": "bidhan@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": ""
     },
     {
       "id": "4aed",
       "username": "sdfsdf",
       "email": "1234@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": ""
     },
     {
       "id": "1844",
       "username": "kina",
       "email": "hello@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": ""
     },
     {
       "id": "e60b",
       "username": "23061002",
       "email": "xyz@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": "jigjk"
     },
     {
       "id": "8237",
       "username": "Dona",
       "email": "don@gmail.com",
-      "password": "Hello1234"
+      "password": "Hello1234",
+      "description": "Helsdfdsfdsfdsflo my name is Dona. I'm currently studying."
     }
   ]
 }
