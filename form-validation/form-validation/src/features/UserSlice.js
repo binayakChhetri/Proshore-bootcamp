@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   username: localStorage.getItem("username") || "",
   isAuthenticated: localStorage.getItem("isAuthenticated") || false,
+  description: localStorage.getItem("description") || "",
 };
 
 const userSlice = createSlice({
@@ -16,11 +17,15 @@ const userSlice = createSlice({
     setIsAuthenticated(state, action) {
       state.isAuthenticated = action.payload;
     },
-    restore(state) {
+    setDescription(state, action) {
+      state.description = action.payload;
+    },
+    restore() {
       return initialState;
     },
   },
 });
 
-export const { setUsername, setIsAuthenticated, restore } = userSlice.actions;
+export const { setUsername, setIsAuthenticated, setDescription, restore } =
+  userSlice.actions;
 export default userSlice.reducer;

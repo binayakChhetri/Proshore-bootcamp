@@ -5,7 +5,7 @@
       "username": "23061011",
       "email": "jkl@gmail.com",
       "password": "Hello1234",
-      "description": "Hello, My name is binayak chhetri."
+      "description": "bbvbvm"
     },
     {
       "id": "aa7e",
@@ -41,6 +41,13 @@
       "email": "don@gmail.com",
       "password": "Hello1234",
       "description": "Helsdfdsfdsfdsflo my name is Dona. I'm currently studying."
+    },
+    {
+      "id": "ca8b",
+      "username": "Milo",
+      "email": "milo@gmail.com",
+      "password": "Hello1234",
+      "description": "He"
     }
   ]
 }

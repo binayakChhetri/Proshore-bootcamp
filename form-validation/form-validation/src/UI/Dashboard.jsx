@@ -15,7 +15,6 @@ export const Dashboard = () => {
     dispatch(restore());
     localStorage.clear();
   };
-  console.log(username);
   return (
     <div className="dashboard">
       <Title>{`Welcome to the dashboard ${username}`}</Title>
@@ -24,6 +23,8 @@ export const Dashboard = () => {
       <Button btnType="button" onClick={logout}>
         Logout
       </Button>
+
+      <div className="about-user-container"></div>
     </div>
   );
 };
