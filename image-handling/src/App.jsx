@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Image } from "cloudinary-react";
 
 function App() {
   const [image, setImage] = useState(null);
@@ -24,6 +25,12 @@ function App() {
         }}
       />
       <button onClick={uploadImage}>Upload image</button>
+
+      <Image
+        cloudName="ddo4fkmzb"
+        publicId="https://res.cloudinary.com/ddo4fkmzb/image/upload/v1734108336/belu1bp4p8w6mjtjhtgg.jpg"
+        style={{ width: 200 }}
+      />
     </div>
   );
 }
