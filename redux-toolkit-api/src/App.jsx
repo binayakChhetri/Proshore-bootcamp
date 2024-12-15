@@ -1,5 +1,6 @@
-function App() {
-  return <h1>HELLO WORLD</h1>;
-}
+import TodoList from "./features/todos/TodoList";
 
+function App() {
+  return <TodoList />;
+}
 export default App;
