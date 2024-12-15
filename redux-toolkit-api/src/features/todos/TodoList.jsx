@@ -2,8 +2,18 @@ import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
+import { useGetTodosQuery } from "../api/apiSlice";
+
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
+
+  const {
+    data: todos,
+    isError,
+    isLoading,
+    error,
+    isSuccess,
+  } = useGetTodosQuery();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +40,13 @@ const TodoList = () => {
   );
   let content;
   // Define conditional content
+  if (isLoading) {
+    content = <p>Loading......</p>;
+  } else if (isSuccess) {
+    content = JSON.stringify(todos);
+  } else if (isError) {
+    content = <p>{error}</p>;
+  }
 
   return (
     <main>
