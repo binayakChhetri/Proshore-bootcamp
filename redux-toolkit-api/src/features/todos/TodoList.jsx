@@ -30,7 +30,11 @@ const TodoList = () => {
     console.log(newTodo);
 
     // addTodo
-    addTodo({ userId: Date.now(), title: newTodo, completed: false });
+    addTodo({
+      userId: Date.now(),
+      title: newTodo,
+      completed: false,
+    });
     setNewTodo("");
   };
 
@@ -56,7 +60,6 @@ const TodoList = () => {
   if (isLoading) {
     content = <p>Loading......</p>;
   } else if (isSuccess) {
-    // JSON.stringify(todos);
     content = todos.map((todo) => {
       return (
         <article id={todo.id}>
@@ -65,13 +68,17 @@ const TodoList = () => {
               type="checkbox"
               checked={todo.completed}
               id={todo.id}
-              onChange={() =>
-                updateTodo({ ...todo, completed: !todo.completed })
-              }
+              onChange={() => {
+                updateTodo({ ...todo, completed: !todo.completed });
+                console.log(todo);
+              }}
             />
             <label htmlFor={todo.id}>{todo.title}</label>
           </div>
-          <button className="trash" onClick={() => deleteTodo({ id: todo.id })}>
+          <button
+            className="trash deleteButton"
+            onClick={() => deleteTodo({ id: todo.id })}
+          >
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </article>
