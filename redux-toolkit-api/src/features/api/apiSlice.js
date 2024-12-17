@@ -15,11 +15,12 @@ export const apiSlice = createApi({
   // baseQuery is a function that takes an object with a baseUrl property
   // This sets ""http://localhost:3000"" as the base URL for all requests defined in this API.
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000" }),
-
+  tagTypes: ["Todos"],
   // The builder parameter provides methods to define queries and mutations.
   endpoints: (builder) => ({
     getTodos: builder.query({
       query: () => "/todos",
+      providesTags: ["Todos"],
     }),
     addTodo: builder.mutation({
       query: (todo) => ({
@@ -27,6 +28,7 @@ export const apiSlice = createApi({
         method: "POST",
         body: todo,
       }),
+      invalidatesTags: ["Todos"],
     }),
     updateTodo: builder.mutation({
       query: (todo) => ({
@@ -34,14 +36,15 @@ export const apiSlice = createApi({
         method: "PATCH",
         body: todo,
       }),
+      invalidatesTags: ["Todos"],
     }),
     deleteTodo: builder.mutation({
       //Here we destructured the id from the todo object that will be passed in
       query: ({ id }) => ({
         url: `/todos/${id}`,
         method: "DELETE",
-        body: id,
       }),
+      invalidatesTags: ["Todos"],
     }),
   }),
 });
