@@ -11,7 +11,11 @@ let result: string;
 const priceBracket: number = dollarSigns.length;
 
 const filteredRestaurants = dataRestaurants.filter((restaurant) => {
-  if (Number(restaurant.priceBracket) > priceBracket) {
+  if (
+    (Number(restaurant.priceBracket) > priceBracket &&
+      hour < Number(restaurant.openHour)) ||
+    hour > Number(restaurant.closeHour)
+  ) {
     return false;
   }
 
