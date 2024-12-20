@@ -6,6 +6,7 @@
 // Defining an enum data type
 
 // 1.) Numeric enums
+// have a corresponding numeric value assigned to them
 // This is an example of numeric enum because the first value is 0 and the rest are incremented by 1.
 // By default, the values of an enum are numbers, but for strings enum we've to write it explicitly.
 /*
@@ -37,6 +38,7 @@ let ordersArrayTS: [Pet, number][] = [
 // ordersArrayTS.push([Pet.Jerboa, 3]);
 
 // 2.) String enums
+// have a corresponding string value assigned to them
 // String enums are much more strict
 /* 
 enum Pet {
@@ -102,3 +104,22 @@ let birthdayBabies: {
 ];
 
 birthdayBabies.forEach(sayHappyBirthdayWithObject);
+
+//  C.) Type Aliases
+// With type aliases, we can customize the types in our program.
+// They are simply the alternative tpye names that we choose for convenience.
+// Type aliases are created using the type keyword.
+
+type Coord = [number, number, string, number, number, string];
+
+let codecademyCoordinates: Coord = [40, 43.2, "N", 73, 59.8, "W"];
+let bermudaTCoordinates: Coord = [25, 0, "N", 71, 0, "W"];
+
+type Person = { name: string; age: number };
+let aCompany: {
+  companyName: string;
+  boss: Person;
+  employees: Person[];
+  employeeOfTheMonth: Person;
+  moneyEarned: number;
+};
