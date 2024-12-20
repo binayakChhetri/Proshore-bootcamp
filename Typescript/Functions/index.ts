@@ -61,3 +61,44 @@ let ordersArrayTS: [Pet, number][] = [
 // ordersArrayTS.push(['HAMSTER', 1]);
 
 // ordersArrayTS.push([Pet.Hamster, 1]); // can be done
+
+// B.) Object Types
+// Object types are used to define the shape of an object, i.e., the properties and their types.
+
+// TypeScript places no restrictions on the types of an object’s properties. They can be enums,
+// arrays, and even other object types!
+
+// Add type annotations to the function parameters which are objects
+function sayHappyBirthdayWithObject(personObject: {
+  name: string;
+  age: number;
+  giftWish: string;
+  success: boolean;
+}) {
+  let output = "";
+  output += "Happy Birthday " + personObject.name + "! ";
+  output += "You are now " + personObject.age + " years old! ";
+  output +=
+    "Your birthday wish was to receive " +
+    personObject.giftWish +
+    ". And guess what? You will ";
+  if (!personObject.success) {
+    output += "not ";
+  }
+  output += "receive it! \n";
+  console.log(output);
+}
+
+// Added type annotations to an array of objects.
+let birthdayBabies: {
+  name: string;
+  age: number;
+  giftWish: string;
+  success: boolean;
+}[] = [
+  { name: "Liam", age: 0, giftWish: "karate skills", success: false },
+  { name: "Olivia", age: 0, giftWish: "a bright future", success: true },
+  { name: "Ava", age: 0, giftWish: "$0.25", success: true },
+];
+
+birthdayBabies.forEach(sayHappyBirthdayWithObject);
