@@ -103,7 +103,7 @@ let birthdayBabies: {
   { name: "Ava", age: 0, giftWish: "$0.25", success: true },
 ];
 
-birthdayBabies.forEach(sayHappyBirthdayWithObject);
+// birthdayBabies.forEach(sayHappyBirthdayWithObject);
 
 //  C.) Type Aliases
 // With type aliases, we can customize the types in our program.
@@ -126,19 +126,19 @@ let aCompany: {
 
 // D.) Function types
 // Math Operations
-function add(a, b) {
+function add(a: number, b: number) {
   return a + b;
 }
-function subtract(a, b) {
+function subtract(a: number, b: number) {
   return a - b;
 }
-function multiply(a, b) {
+function multiply(a: number, b: number) {
   return a * b;
 }
-function divide(a, b) {
+function divide(a: number, b: number) {
   return a / b;
 }
-function wrongAdd(a, b) {
+function wrongAdd(a: number, b: number) {
   return a + b + "";
 }
 
