@@ -146,6 +146,7 @@ function wrongAdd(a: number, b: number) {
 type OperatorFunction = (num1: number, num2: number) => number;
 
 // Math Tutor Function That Accepts a Callback
+/* 
 function mathTutor(operationCallback: OperatorFunction) {
   console.log("Let's learn how to", operationCallback.name, "!");
   let value25 = operationCallback(2, 5);
@@ -165,10 +166,11 @@ function mathTutor(operationCallback: OperatorFunction) {
     "."
   );
   console.log("Now fill out this worksheet.");
-}
+} 
+  */
 
 // Call your functions below:
-mathTutor(multiply);
+// mathTutor(multiply);
 // mathTutor(wrongAdd); // will produce an error
 
 // E.) Generic types
@@ -233,3 +235,33 @@ let anotherFamily: Family<Dog> = {
     { name: "Puppenator", tailWagSpeed: 0.01 },
   ],
 };
+
+// Generic Functions
+
+// function getFilledArray<T>(value: T, n: number): T[] {
+//   return Array(n).fill(value);
+// }
+
+// This is a valid call
+// console.log(getFilledArray<string>("Hello", 8));
+
+// Throws error
+// console.log(getFilledArray<number>("Hello", 8));
+
+function getFilledArray<T>(value: T, n: number): T[] {
+  return Array(n).fill(value);
+}
+
+let stringArray: string[];
+let numberArray: number[];
+let personArray: { name: string; age: number }[];
+let coordinateArray: [number, number][];
+
+// Write your code below:
+stringArray = getFilledArray<string>("hi", 6);
+numberArray = getFilledArray<number>(9, 6);
+personArray = getFilledArray<{ name: string; age: number }>(
+  { name: "J. Dean", age: 24 },
+  6
+);
+coordinateArray = getFilledArray<[number, number]>([3, 4], 6);

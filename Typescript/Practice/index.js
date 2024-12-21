@@ -99,16 +99,11 @@ function divide(a, b) {
 function wrongAdd(a, b) {
     return a + b + "";
 }
-// Math Tutor Function That Accepts a Callback
-function mathTutor(operationCallback) {
-    console.log("Let's learn how to", operationCallback.name, "!");
-    let value25 = operationCallback(2, 5);
-    console.log("When we", operationCallback.name, "2 and 5, we get", value25, ".");
-    console.log("When we", operationCallback.name, value25, "and 7, we get", operationCallback(value25, 7), ".");
-    console.log("Now fill out this worksheet.");
-}
-// Call your functions below:
-mathTutor(multiply);
+let myFam = {
+    parents: ["Dad", "Mom"],
+    mate: "Me",
+    children: ["Daughter", "Son"],
+};
 //Do not change the code above this line.
 //Provide type annotations for the variables below:
 let theFamily = {
@@ -141,3 +136,23 @@ let anotherFamily = {
         { name: "Puppenator", tailWagSpeed: 0.01 },
     ],
 };
+// Generic Functions
+// function getFilledArray<T>(value: T, n: number): T[] {
+//   return Array(n).fill(value);
+// }
+// This is a valid call
+// console.log(getFilledArray<string>("Hello", 8));
+// Throws error
+// console.log(getFilledArray<number>("Hello", 8));
+function getFilledArray(value, n) {
+    return Array(n).fill(value);
+}
+let stringArray;
+let numberArray;
+let personArray;
+let coordinateArray;
+// Write your code below:
+stringArray = getFilledArray("hi", 6);
+numberArray = getFilledArray(9, 6);
+personArray = getFilledArray({ name: "J. Dean", age: 24 }, 6);
+coordinateArray = getFilledArray([3, 4], 6);
