@@ -6,16 +6,18 @@ const me = {
     hobbies: ["Building rockets"],
 };
 me.code();
-// Index Signature
-// import { getBudgetAsync } from "./api";
-// Write an interface here
-/* interface Budget {
-  [category: string]: number;
+function getUserName(options) {
+    if (options.firstName && options.lastName) {
+        return console.log(`${options.firstName} ${options.lastName}`);
+    }
+    return console.log(options.username);
 }
-
-async function getBudget() {
-  const result: Budget = await getBudgetAsync();
-  console.log(result);
-}
-
-getBudget(); */
+getUserName({
+    firstName: "Mr.",
+    lastName: "Oshiro",
+    username: "hotelowner304",
+});
+getUserName({
+    firstName: "Madeline",
+    username: "mountainClimber",
+});
