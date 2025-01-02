@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { ModeToggle } from "./components/mode-toggle";
+import { ThemeProvider } from "./components/ui/theme-provider";
+import { Login } from "./pages/Login";
 
 export default function Home() {
   return (
-    <div className="">
-      <Button>Click me</Button>
-    </div>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <ModeToggle />
+      <Login />
+    </ThemeProvider>
   );
 }
