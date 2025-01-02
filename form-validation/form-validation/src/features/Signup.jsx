@@ -11,7 +11,8 @@ import { useNavigate } from "react-router";
 
 const SignupForm = () => {
   const naviagte = useNavigate();
-  const { values, errors, handleSubmit, handleChange, resetForm } = useFormik({
+
+  const { values, handleChange, errors, handleSubmit, resetForm } = useFormik({
     initialValues: {
       username: "",
       email: "",
